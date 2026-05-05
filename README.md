@@ -2,7 +2,7 @@
 
 
 <h2>Description</h2>
-This project utilizes the dataset of an ABB IRB120 six-degree-of-freedom (6DOF) robot arm from Kaggle. It was generated from various end-effectors’ positions using forward kinematics (FK), which then became the input used to feed into the neural network models. And the derived joint angles were mapped to the end-effectors’ position. Usually, resolving the inverse kinematics (IK) problem with conventional numerical methods presents complex and non-linear challenges owing to the requirement of timeliness, precision, and accuracy. Meanwhile, neural network applications to Inverse Kinematics (IK) problems show faster methods of providing IK solutions.  And so, this research examines different performance capabilities of three neural network models when applied to IK datasets. The datasets were trained individually on Long-Short Term Memory (LSTM) neural network, Feed-forward Neural Network (FNN), and Recurrent Neural Network (RNN) using Keras on TensorFlow. During performance analysis, the LSTM model proved to be better in predictions as it gave the smallest joint error in the Cartesian workspace.
+This project utilizes the dataset of an ABB IRB120 six-degree-of-freedom (6DOF) robot arm from Kaggle (Baressi Šegota et al., 2021). It was generated from various end-effectors’ positions using forward kinematics (FK), which then became the input used to feed into the neural network models. And the derived joint angles were mapped to the end-effectors’ position. Usually, resolving the inverse kinematics (IK) problem with conventional numerical methods presents complex and non-linear challenges owing to the requirement of timeliness, precision, and accuracy. Meanwhile, neural network applications to Inverse Kinematics (IK) problems show faster methods of providing IK solutions.  And so, this research examines different performance capabilities of three neural network models when applied to IK datasets. The datasets were trained individually on Long-Short Term Memory (LSTM) neural network, Feed-forward Neural Network (FNN), and Recurrent Neural Network (RNN) using Keras on TensorFlow. During performance analysis, the LSTM model proved to be better in predictions as it gave the smallest joint error in the Cartesian workspace.
 <br />
 
 
@@ -66,12 +66,24 @@ Mathematical Model for a Neuron <br/>
 
 <b>The dataset used to train each of these models contains 15,000 samples of end-effectors (x, y, z) and joint angles (θ1, θ2, θ3, θ4, θ5, θe). After training the three models, their test outcomes and loss curves are presented in the table and figures below to compare and establish the model that fits better with the IK dataset. </b>
 
-
 <p align="center">
-Results - (a) Action-Distribution, (b) Sensor Over Time, (c) Robot Motion Trajectory: <br/>
-<img src="https://i.postimg.cc/Hs2GTq54/Screenshot-2026-05-05-022659.png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+Performance Metrics of the Model <br/>
+<img src="https://i.postimg.cc/PqyMMwcv/Screenshot-2026-05-05-111407.png" height="25%" width="45%" alt="Disk Sanitization Steps"/>
 <br />
 
+<p align="center">
+MSE Loss Function <br/>
+<img src="https://i.postimg.cc/d09jsyjy/1Screenshot-2026-05-05-113436.png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+<br />
+
+<b>Conclusion</b>
+
+<b>In all, the LSTM model achieved remarkable values in MSE, MAE, R2, and end-effector error (mean and max). These values will help to accomplish accuracy and precision in joint and Cartesian space predictions. Although the LSTM model might have performed excellently numerically, it still has its insufficiencies in providing robust solutions for IK problems. </b>
+
+
+<b>Reference</b>
+
+- <b>Baressi Šegota, S., Car, Z., Anđelić, N., Lorencin, I., Mrzljak, V., Musulin, J. and Štifanić, D. (2021) Robot Kinematics Dataset. https://doi.org/10.34740/KAGGLE/DSV/2614183.</b>
 
 <!--
  ```diff
