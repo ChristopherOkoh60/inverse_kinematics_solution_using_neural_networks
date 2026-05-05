@@ -6,45 +6,52 @@ This project utilizes the dataset of an ABB IRB120 six-degree-of-freedom (6DOF) 
 <br />
 
 
-<h2>Languages and Utilities Used</h2>
-
-- <b>PowerShell</b> 
-- <b>Diskpart</b>
-
-<h2>Environments Used </h2>
-
-- <b>Windows 10</b> (21H2)
-
-<h2>Program walk-through:</h2>
+<h2>Hardware</h2>
 
 <p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+ABB IRB120: <br/>
+<img src="https://i.postimg.cc/tJRhHnFR/abb-irb-120-robotics.jpg" height="50%" width="30%" alt="Disk Sanitization Steps"/>
 <br />
+ 
+
+<h2>Languages and Utilities Used</h2>
+
+- <b>Python</b> 
+- <b>TensorFlow</b>
+
+<h2>Environment</h2>
+
+- <b>Google Colab</b>
+
+<h2>Project walk-through:</h2>
+<b>(1)</b>
+ <b>Collect the numerical inverse kinematic dataset as a CSV file having joint angles and end-effector position for the ABB IRB120 six-DOF robot arm (targets and features). </b>
+
+<p align="center">
+Position and Orientation of a 6DoF Robot Arm: <br/>
+<img src="https://i.postimg.cc/0Q9sP9jz/6dof-robot-arm-schematic.png" height="50%" width="30%" alt="Disk Sanitization Steps"/>
 <br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<b>Step 2</b>
+
+- <b>Train the DQN model with the data collected using a well-structured set of hyperparameters</b>
+- <b>Ensure the reward functions are continuously tuned to improve stability and convergence</b>
+
+<p align="center">
+DQN Training Network Architecture: <br/>
+<img src="https://i.postimg.cc/TY2Y6qSN/Picture1.png" height="60%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
+
+<b>Step 3</b>
+
+- <b>Perform testing to ensure that the robot learned the trajectory pathway and obstacle detection</b>
+- <b>Evaluate the testing outcomes</b>
+
+<p align="center">
+Results - (a) Action-Distribution, (b) Sensor Over Time, (c) Robot Motion Trajectory: <br/>
+<img src="https://i.postimg.cc/Hs2GTq54/Screenshot-2026-05-05-022659.png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 <br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+
 
 <!--
  ```diff
